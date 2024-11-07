@@ -17,8 +17,9 @@ This project demonstrates the use of PostgreSQL and PL/pgSQL to perform data ana
    - Stored procedure (refresh_tables()).
    - Optional code to reset the environment.
 3. Result tables:
-   - detailed_table.csv: Contains the detailed rental data with the year, month, and category of each rental.
-   - summary_table.csv: Contains the summary data showing the total number of rentals for each film category, organized by year and month.
+   - __detailed_table.csv__: Contains the detailed rental data with the year, month, and category of each rental.
+   - __summary_table.csv__: Contains the summary data showing the total number of rentals for each film category, organized by year and month.
+4. Project Description: __Project description.pdf__ — This document provides a detailed outline of the project scope, objectives, and methodology.
 ## Prerequisites
 ### Install PostgreSQL on your local machine.
 [Instructions on how to install PostgreSQL](https://neon.tech/postgresql/postgresql-getting-started/install-postgresql)
@@ -27,7 +28,7 @@ This project demonstrates the use of PostgreSQL and PL/pgSQL to perform data ana
 ### Connect to a PostgreSQL database server
 [Instructions on how to connect to a PostgreSQL database server](https://neon.tech/postgresql/postgresql-getting-started/connect-to-postgresql-database)
 ### Download sample database:  
-Download dvdrental.zip from [GitHub repository](https://github.com/nvu01/Advanced-Data-Management)
+Download dvdrental.zip from [root directory of GitHub repository](https://github.com/nvu01/Advanced-Data-Management)
 or from [neon.tech](https://neon.tech/postgresql/postgresql-getting-started/postgresql-sample-database)
 ### Load PostgreSQL sample database
 [Instructions on how to load PostgreSQL sample database](https://neon.tech/postgresql/postgresql-getting-started/load-postgresql-sample-database)
