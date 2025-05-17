@@ -1,4 +1,5 @@
 # Advanced Data Management - DVD Rental Store Analysis
+
 ## Overview
 This project demonstrates the use of PostgreSQL and PL/pgSQL to perform data analysis, transformation, and automation tasks within a DVD rental store business database.
 ## Key Features:
@@ -20,6 +21,7 @@ This project demonstrates the use of PostgreSQL and PL/pgSQL to perform data ana
    - __detailed_table.csv__: Contains the detailed rental data with the year, month, and category of each rental.
    - __summary_table.csv__: Contains the summary data showing the total number of rentals for each film category, organized by year and month.
 4. Project Description: __Project description.pdf__ — This document provides a detailed outline of the project scope, objectives, and methodology.
+
 ## Prerequisites
 ### Install PostgreSQL on your local machine.
 [Instructions on how to install PostgreSQL](https://neon.tech/postgresql/postgresql-getting-started/install-postgresql)
