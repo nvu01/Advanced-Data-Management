@@ -48,7 +48,7 @@ Follow the instructions below to execute each section as needed.
    - How to use: Run the first 2 `CREATE OR REPLACE FUNCTION` blocks to create the functions.   
 2. Tables Creation
    - Purpose: Create two tables:
-     - `detailed_table`: Stores detailed rental data including the rental_id, year_of_rental, month_of_rental, and category_name.
+     - `detailed_table`: Stores detailed rental data including the `rental_id`, `year_of_rental`, `month_of_rental`, and `category_name`.
      - `summary_table`: Aggregates rental data by year, month, and category to track rental counts.
    - How to use: Execute the `CREATE TABLE` blocks to create the tables. You can later populate them with data and use them for reporting.
 3. Automatic `summary_table` update with trigger
@@ -66,4 +66,4 @@ Follow the instructions below to execute each section as needed.
 
 Notes:
    You can execute each section independently based on your needs (e.g., if you need to refresh data or just create the tables).
-   Always test your tables (detailed_table and summary_table) using SELECT queries after running the script to ensure the data is loaded correctly.
+   Always test your tables (`detailed_table` and `summary_table`) using SELECT queries after running the script to ensure the data is loaded correctly.
