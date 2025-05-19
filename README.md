@@ -12,7 +12,7 @@ By having up-to-date rental data available, the business can better forecast dem
    - SQL queries with multiple joins and aggregation to create tables (`detailed_table`, `summary_table`).
    - SQL queries to extract raw data and populate the `detailed_table`.
    - User-defined function to update table (`summary_table_update()`) and function trigger (`update_summary_on_insert`).
-   - Stored procedure (`refresh_tables()`).
+   - Stored procedure (`refresh_tables()`) to refresh `detailed_table` and `summary_table`.
    - Optional code to reset the environment.
 3. Result tables:
    - __detailed_table.csv__: Contains the detailed rental data with the year, month, and category of each rental.
