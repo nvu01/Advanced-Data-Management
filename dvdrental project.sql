@@ -79,7 +79,7 @@ FOR EACH STATEMENT
 EXECUTE PROCEDURE summary_table_update(); 
 
 
--- DATA EXTRACTION AND POPULATION --
+-- DATA EXTRACTION AND POPULATING TABLE --
 
 -- Run this block to add raw data to the detailed table
 INSERT INTO detailed_table
