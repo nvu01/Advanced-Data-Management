@@ -1,0 +1,4 @@
+"column_name","data_type"
+"category_id","integer"
+"name","character varying"
+"last_update","timestamp without time zone"

@@ -1,0 +1,5 @@
+"column_name","data_type"
+"rental_id","integer"
+"rental_year","integer"
+"rental_month","integer"
+"category_name","character varying"

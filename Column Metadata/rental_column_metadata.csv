@@ -1,0 +1,8 @@
+"column_name","data_type"
+"rental_id","integer"
+"rental_date","timestamp without time zone"
+"inventory_id","integer"
+"customer_id","smallint"
+"return_date","timestamp without time zone"
+"staff_id","smallint"
+"last_update","timestamp without time zone"
