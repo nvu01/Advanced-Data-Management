@@ -48,8 +48,22 @@ GROUP BY rental_year, rental_month, category_name
 ORDER BY rental_year DESC, rental_month DESC, num_rentals DESC;
 
 -- Test the CREATE TABLE statements
+
+--- See the full tables:
+---- Detailed table:
 SELECT * FROM detailed_table;
+---- Summary table:
 SELECT * FROM summary_table;
+
+--- Or check the column metadata:
+---- Detailed table:
+SELECT column_name, data_type 
+FROM information_schema.columns 
+WHERE table_name = 'detailed_table';
+---- Summary table:
+SELECT column_name, data_type 
+FROM information_schema.columns 
+WHERE table_name = 'summary_table';
 
 
 -- TRIGGER FOR SUMMARY TABLE UPDATE --
@@ -81,7 +95,7 @@ EXECUTE PROCEDURE summary_table_update();
 
 -- DATA EXTRACTION AND POPULATING TABLE --
 
--- Run this block to add raw data to the detailed table
+-- Add raw data to the detailed table. This will also trigger update to the summary_table.
 INSERT INTO detailed_table
 SELECT r.rental_id, rental_year (r.rental_date), rental_month (r.rental_date), c.name AS category_name
 FROM rental r
@@ -94,19 +108,24 @@ ORDER BY rental_year DESC, rental_month DESC;
 SELECT * FROM detailed_table ORDER BY rental_id DESC;   -- The max rental_id is 16049.
 
 -- Test the trigger
+
+--- Check if summary_table is populated
 SELECT * FROM summary_table;   -- summary_table is now filled with data and the most current month is February 2006.
+
 --- Insert a new row to the detailed table to test the trigger
 INSERT INTO detailed_table VALUES (16050, 2007, 10, 'Horror');
+
 --- The most current month in the summary table is Oct 2007
 SELECT * FROM summary_table;
+
 --- Run this code after adding a row to the detailed table. The max rental_id is now 16050.
 SELECT * FROM detailed_table ORDER BY rental_id DESC;
 
 
 -- STORED PROCEDURE FOR DATA REFRESH --
 
--- Create a procedure that refreshes data in both the detailed and summary tables
--- The procedure will not only refresh the data but also remove any test data that was manually inserted (like the row added earlier when testing the trigger)
+-- Create a procedure that re-populates the 2 tables with raw data from the database
+-- Any test data that was manually inserted to the detailed table won't be included (like the row added earlier when testing the trigger)
 DROP PROCEDURE IF EXISTS refresh_tables();
 CREATE PROCEDURE refresh_tables ()
 LANGUAGE plpgsql
@@ -137,11 +156,14 @@ END;
 $$;
 
 -- Test the procedure
+
 --- Checking the number of rows in 2 tables before refreshing
 SELECT COUNT (*) FROM detailed_table; 
 SELECT COUNT (*) FROM summary_table;
+
 --- Call the procedure
 CALL refresh_tables(); 
+
 --- Checking the number of rows in 2 tables after refreshing
 SELECT COUNT (*) FROM detailed_table;   -- 16044 rows
 SELECT COUNT (*) FROM summary_table;   -- 80 rows
